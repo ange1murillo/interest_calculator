@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+   function calculatePayment(){
+       
+       var p, r, n, m, outputString;
+       
+       p= document.getElementById('loan').value;
+       r= document.getElementById('interest').value;
+       n= document.getElementById('years').value;
+       
+       p= parseFloat(p);
+       r= parseFloat(r);
+       n= parseFloat(n);
+       
+       m= (p * r/1200.0) / (1 - Math.pow(1.0 + r / 1200.0, -12.0 * n));
+       
+       m= m.toFixed(2);
+       
+       outputString = "Your monthly installment per month is $" + m;
+       
+      document.getElementById('displayPayment').value = outputString;
+   } 
+    
+</script> 
+</head>
+<body style="background-color:beige;">
+    
+    
+<div class="container">
+
+<nav id="main-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="interest.html">Interest</a></li>
+    <li><a href="measurement.html">Area & Perimeter</a></li>
+    
+  </ul>   
+</nav>
+    
+  
+
+
+    <br><br><br><br><br>
+    
+<div id="interestForm">
+    
+<h1>Calculate Monthly Installment</h1>
+    
+<img id="car-image" src="images/couplebuyingcar.jpg">
+    
+<p>You and your family decide its time for a new car! Use this handy calculator to determine your monthly payment plan.</p>
+    
+<form name="calculate">
+    
+    <p>Enter the Loan Amount:
+    <input id="loan" type="number" placeholder="Principle" size="10">
+    </p>
+    
+    <p>Enter the Interest Rate:
+    <input id="interest" type="number" placeholder="Interest Rate" size="10">
+    </p>
+    
+    <p>Enter the Number of Years:
+    <input id="years" type="number" placeholder="#Years" size="10">
+    </p>
+    
+      <p><input type="button" value="Calculate Payment" onclick="calculatePayment()"></p>
+    
+    <p>
+    <textarea id="displayPayment" rows="3" cols="45" style="font-size: 12pt" placeholder="Monthly Payment"></textarea>
+    
+    </p>
+    
+    
+    
+    
+    </form>
+
+    
+    </div>
+    </div>
+</body>
+
+
+
+</html>
