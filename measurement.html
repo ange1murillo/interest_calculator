@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+   function calculateAp(){
+       
+       var l, w, a, p, outputString;
+       
+       l= document.getElementById('length').value;
+       w= document.getElementById('width').value;
+       
+       a= l * w;
+       p = (l*2) + (w*2);
+       
+       a= parseFloat(a);
+       p= parseFloat(p);
+       
+       a= a.toFixed(2);
+       p= p.toFixed(2);
+       
+       outputString = "The Area is equal to " + a + "\n" + "The perimeter is equal to " + p;
+       
+       
+      document.getElementById('displayAP').value = outputString;
+   } 
+    
+</script> 
+</head>
+<body style="background-color:beige;">
+    
+    
+<div class="container">
+
+<nav id="main-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="interest.html">Interest</a></li>
+    <li><a href="areaPerimeter.html">Area & Perimeter</a></li>
+    
+  </ul>   
+</nav>
+    
+  
+
+
+    <br><br><br><br><br>
+    
+<div id="interestForm">
+<h1>Calculate Area & Perimeter</h1>
+<img id="garage-image" src="images/garagesize.PNG">
+<p>Now that your family has bought a new car your thinking about building a garage. Use this tool to help plan out your project.</p>
+    
+<form name="calculate">
+    
+    <p>Enter the Length:
+    <input id="length" type="number" placeholder="Length" size="10">
+    </p>
+    
+    <p>Enter the Width:
+    <input id="width" type="number" placeholder="Width" size="10">
+    </p>
+    
+      <p><input type="button" value="Calculate Dimensions" onclick="calculateAp()"></p>
+    
+    <p>
+    <textarea id="displayAP" rows="3" cols="45"style="font-size: 12pt" placeholder="Area and Perimeter"></textarea>
+    
+    </p>
+    
+    
+    
+    
+    </form>
+
+    
+    </div>
+    </div>
+</body>
+
+
+
+</html>
